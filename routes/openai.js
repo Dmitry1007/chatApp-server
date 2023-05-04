@@ -18,8 +18,6 @@ router.post("/text", async (req, res) => {
             ],
         });
 
-        console.log("RESPONSE", response.data.choices[0].message.content);
-
         await axios.post(
             `https://api.chatengine.io/chats/${activeChatId}/messages/`,
             { text: response.data.choices[0].message.content },
